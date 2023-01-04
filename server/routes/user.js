@@ -1,7 +1,7 @@
 const express = require('express')
 const User = require('../models/UsersModel')
-var bodyParser=require('body-parser');
-var jsonParser=bodyParser.json();
+var bodyParser = require('body-parser');
+var jsonParser = bodyParser.json();
 const router = express.Router()
 const {signJwt, verifyJwt} = require('../jwt');
 

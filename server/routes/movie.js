@@ -1,10 +1,12 @@
-const express = require('express')
-const movieRouter = express.Router()
-import { Movie } from "./models/MovieModel.js";
-import { Director } from "./models/DirectorModel.js";
-import { Actor } from "./models/ActorModel.js";
-import { Borrow } from "./models/BorrowModel.js";
-import { ActorMovie } from "./models/ActorMovieModel.js";
+const Movie = require("../models/MovieModel");
+const Director = require("../models/DirectorModel");
+const Actor = require("../models/ActorModel");
+const Borrow = require("../models/BorrowModel");
+const ActorMovie = require("../models/ActorMovieModel");
+const cors = require("cors");
+const express = require('express');
+const movieRouter = express.Router();
+
 
 movieRouter.get('/movies'/*, verifyJwt, cors()*/, (req, res)=>{
     console.log("HEEY");
@@ -425,3 +427,5 @@ movieRouter.put('/updateActorMovies/:id', cors(), (req, res)=>{
             }
         })
 })
+
+module.exports = movieRouter;
